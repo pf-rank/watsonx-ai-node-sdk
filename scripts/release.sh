@@ -51,7 +51,7 @@ npm audit --audit-level high
 NPM_REGISTRY="$(get_env npm-registry)"
 
 if [[ "${NPM_REGISTRY}" != $(npm config get registry) ]] ; then
-    npm publish --registry "${NPM_REGISTRY}"
+    (cd dist/ && npm publish --registry "${NPM_REGISTRY}")
 else
-    npm publish
+    (cd dist/ && npm publish)
 fi
