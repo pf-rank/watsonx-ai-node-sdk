@@ -17,7 +17,7 @@ rm -rf ${NODE_PATH}; mkdir -p ${NODE_PATH}/dist/watsonx-ai-ml
 # Copy src to dist/src and build from dist/src into dist, so that
 # the source map for index.js.map will refer to ./src/index.ts etc
 
-for file in .npmrc .npmignore src README.md LICENSE CONTRIBUTING.md CODE_OF_CONDUCT.md; do
+for file in npm-config.env.template .releaserc .npmrc .npmignore src README.md LICENSE CONTRIBUTING.md CODE_OF_CONDUCT.md; do
   if [ -e "${file}" ]; then cp -rp "${file}" dist; fi
 done
 
