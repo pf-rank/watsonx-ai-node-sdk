@@ -20,7 +20,7 @@ echo "${SELECTED_TAGS[@]}"
 DOC_FILES=()
 for TAG in ${SELECTED_TAGS} ; do
     git checkout "${TAG}"
-    npm run typedoc -- --json "${TAG%.*}.json" --name "${TAG%.*}.x"
+    npm run typedoc src/ -- --json "${TAG%.*}.json" --name "${TAG%.*}.x"
     DOC_FILES+=("${TAG%.*}.json")
 done
 

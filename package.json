@@ -20,7 +20,7 @@
     "lint-fix": "npm run eslint:fix",
     "format": "prettier --config .prettierrc.js --write \"watsonx-ai-ml\" \"helpers\" \"auth\" \"test\"",
     "build": "./scripts/build",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "echo 'to publish, run `npm run build && (cd dist; npm publish)`' && exit 1",
     "postversion": "publisher --no-checks --dry-run",
     "local-publish": "npm run build && command -v yalc >/dev/null 2>&1 || npm install -g yalc && (cd dist/ && yalc publish)",
     "install-package-regression": "npm run local-publish && cd ./test/langchain && npm run test-install",
